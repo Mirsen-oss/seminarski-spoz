@@ -56,6 +56,24 @@ def main():
         print('Pokreni sa --eda, --train ili --all')
         print('Primer: python main.py --all')
 
-
 if __name__ == '__main__':
     main()
+
+# df = load_data(DATA_PATH)
+#
+# print(df.columns.tolist())
+# print(df[['Avg Waste per Capita (Kg)', 'Population (Million)', 'Total Waste (Tons)']].head(10))
+#
+# # Da li je ovo skoro pa isti broj?
+# df['calculated'] = df['Avg Waste per Capita (Kg)'] * df['Population (Million)'] * 1000
+# print(df[['Total Waste (Tons)', 'calculated']].head())
+#
+# 1. Da li Economic Loss ima bolju vezu?
+# print(df[['Total Waste (Tons)', 'Economic Loss (Million $)']].corr())
+#
+# 2. Da li Country unosi ikakav signal?
+# print(df.groupby('Country')['Total Waste (Tons)'].mean().describe())
+#
+# 3. Koliko uopšte ima redova i da li su vrednosti zaista random?
+# print(df['Total Waste (Tons)'].describe())
+# print(df.shape)

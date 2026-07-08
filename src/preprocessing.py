@@ -4,22 +4,29 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 
 FEATURES = [
+    # 'Country',
+    # 'Year',
+    # 'Food Category',
+    # 'Avg Waste per Capita (Kg)',
+    # 'Population (Million)',
+    # 'Household Waste (%)',
     'Year',
     'Food Category',
-    'Avg Waste per Capita (Kg)',
+    'Total Waste (Tons)',
     'Population (Million)',
     'Household Waste (%)',
 ]
-TARGET = 'Total Waste (Tons)'
+# TARGET = 'Total Waste (Tons)'
+TARGET = 'Economic Loss (Million $)'
 
 NUMERIC_FEATURES = [
     'Year',
-    'Avg Waste per Capita (Kg)',
+    'Total Waste (Tons)',
     'Population (Million)',
     'Household Waste (%)',
 ]
-CATEGORICAL_FEATURES = ['Food Category']
 
+CATEGORICAL_FEATURES = ['Food Category']
 
 def load_data(path: str) -> pd.DataFrame:
     return pd.read_csv(path)
